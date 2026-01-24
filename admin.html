@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administration - HAKNPRESTIGE</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f2f2f2; }
+    .admin-container { max-width: 600px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h2, h3 { margin-bottom: 1rem; color: #333; }
+    label { display: block; margin-top: 1rem; font-weight: bold; color: #555; }
+    input, select, button { width: 100%; margin-top: 0.5rem; padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    button { margin-top: 1.5rem; background: #000; color: #fff; border: none; cursor: pointer; font-weight: bold; }
+    button.secondary { background: #777; margin-top: 0.5rem; }
+    small.hint { color:#777; display:block; margin-top:.25rem; }
+  </style>
+  <link rel="canonical" href="https://www.chauffeursbordeaux.com/admin.html"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Retour à l'accueil">
+      <img src="/img/logo.png" alt="HAKNPRESTIGE" class="brand-logo" width="200" height="60">
+    </a>
+
+    <div class="header-center" aria-label="Slogan">
+      <div class="tagline">LAISSEZ-VOUS CONDUIRE</div>
+      <div class="subline">TAXI &amp; VTC</div>
+    </div>
+
+    <div class="header-actions">
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="/">Accueil</a>
+        <a href="/vtc-bordeaux/">VTC Bordeaux</a>
+        <a href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+        <a href="/services/">Services</a>
+        <a href="/forfaits/">Forfaits</a>
+        <a href="/demande-de-devis/">Devis</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+        <a href="/partenaires/">Partenaires</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <nav class="mobile-drawer" id="mobileMenu" aria-label="Menu principal">
+    <div class="drawer-top">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" type="button" aria-label="Fermer le menu">×</button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a class="drawer-link" href="/">Accueil</a>
+      <a class="drawer-link" href="/vtc-bordeaux/">VTC Bordeaux</a>
+      <a class="drawer-link" href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+      <a class="drawer-link" href="/services/">Services</a>
+      <a class="drawer-link" href="/forfaits/">Forfaits</a>
+      <a class="drawer-link" href="/demande-de-devis/">Demande de devis</a>
+      <a class="drawer-link" href="/a-propos/">À propos</a>
+      <a class="drawer-link" href="/contact/">Contact</a>
+      <a class="drawer-link" href="/partenaires/">Partenaires</a>
+      <a class="drawer-link" href="/blog/">Blog</a>
+    </div>
+  </nav>
+</header>
+
+
+  <div class="admin-container">
+    <h2>Accès Administrateur</h2>
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button onclick="checkPassword()">Valider</button>
+
+    <div id="admin-panel" style="display:none;">
+      <h3>Paramètres de tarification</h3>
+      <label for="prix-min">Prix minimum (Éco) (€)</label>
+      <input type="number" id="prix-min" step="0.01" />
+
+      <label for="prix-km-eco">€/km (Éco)</label>
+      <input type="number" id="prix-km-eco" step="0.01" />
+
+      <label for="prix-min-eco">€/min (Éco)</label>
+      <input type="number" id="prix-min-eco" step="0.01" />
+
+      <label for="prix-min-van">Prix minimum (Van) (€)</label>
+      <input type="number" id="prix-min-van" step="0.01" />
+
+      <label for="prix-km-van">€/km (Van)</label>
+      <input type="number" id="prix-km-van" step="0.01" />
+
+      <label for="prix-min-van-coef">€/min (Van)</label>
+      <input type="number" id="prix-min-van-coef" step="0.01" />
+
+      <label for="cap-pax">Capacité passagers (Éco)</label>
+      <input type="number" id="cap-pax" />
+
+      <label for="cap-bags">Capacité valises (Van)</label>
+      <input type="number" id="cap-bags" />
+
+      <label for="default-vehicle">Véhicule par défaut</label>
+      <select id="default-vehicle">
+        <option value="eco">Éco</option>
+        <option value="van">Van</option>
+      </select>
+
+      <h3>Règles de majoration</h3>
+      <label for="night-start">Heure début (nuit)</label>
+      <input type="time" id="night-start" value="21:00" />
+      <label for="night-end">Heure fin (nuit)</label>
+      <input type="time" id="night-end" value="07:00" />
+      <label for="night-percent">Majoration nuit (%)</label>
+      <input type="number" id="night-percent" step="1" value="0" />
+<div class="footer-social">
+  <a class="social-btn facebook" href="https://www.facebook.com/share/17gk2HrWwY/" target="_blank" rel="nofollow noopener" aria-label="Facebook HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.62.77-1.62 1.56v1.88h2.76l-.44 2.9h-2.32V22C18.34 21.24 22 17.08 22 12.07z"/>
+    </svg>
+  </a>
+  <a class="social-btn linkedin" href="https://www.linkedin.com/in/haknprestige-taxi-vtc-3a33a237b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="nofollow noopener" aria-label="LinkedIn HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.45 20.45h-3.55v-5.55c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.93v5.64H9.39V9h3.41v1.56h.05c.48-.9 1.66-1.84 3.42-1.84 3.66 0 4.33 2.41 4.33 5.55v6.18zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/>
+    </svg>
+  </a>
+</div>
+      <small class="hint">S’applique si l’horaire réservé est entre début et fin (plage qui peut traverser minuit).</small>
+
+      <label for="dist-threshold">Seuil hors-zone (km du centre Bordeaux)</label>
+      <input type="number" id="dist-threshold" step="1" value="35" />
+      <label for="dist-percent">Majoration hors-zone (%)</label>
+      <input type="number" id="dist-percent" step="1" value="0" />
+      <small class="hint">S’applique si le départ ou l’arrivée est au-delà du seuil.</small>
+
+      
+      <h3>Codes promo</h3>
+      <p style="margin:-6px 0 12px;color:#666;line-height:1.35;">
+        Créez des codes promo (ex : <strong>ADIL10</strong>) avec un pourcentage. <br>
+        <strong>Important :</strong> sur Netlify, définissez la variable d’environnement <code>ADMIN_CODE</code> avec le même mot de passe (ex : <code>Abarkan10</code>).
+      </p>
+
+      <label for="promo-code">Code promo</label>
+      <input type="text" id="promo-code" placeholder="Ex : ADIL10" />
+
+      <label for="promo-percent">Réduction (%)</label>
+      <input type="number" id="promo-percent" placeholder="10" min="1" max="90" />
+
+      <label for="promo-active">Statut</label>
+      <select id="promo-active">
+        <option value="true">Actif</option>
+        <option value="false">Désactivé</option>
+      </select>
+
+      <button class="secondary" type="button" onclick="promoUpsert()">Ajouter / Mettre à jour</button>
+      <button class="secondary" type="button" onclick="promoRefresh()">Rafraîchir la liste</button>
+
+      <div id="promo-list" style="margin-top:12px;"></div>
+      <div id="promo-msg" style="margin-top:10px;font-size:14px;color:#333;"></div>
+
+<button onclick="saveSettings()">Enregistrer</button>
+      <button class="secondary" onclick="resetSettings()">Réinitialiser</button>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pwd = document.getElementById("password").value;
+      if (pwd === "Abarkan10") {
+        document.getElementById("admin-panel").style.display = "block";
+        // Remplir les champs avec les valeurs enregistrées
+        document.getElementById('prix-min').value        = localStorage.getItem('prixMinEco')       || '';
+        document.getElementById('prix-km-eco').value     = localStorage.getItem('prixKmEco')        || '';
+        document.getElementById('prix-min-eco').value    = localStorage.getItem('prixMinEcoCoef')   || '';
+        document.getElementById('prix-min-van').value    = localStorage.getItem('prixMinVan')       || '';
+        document.getElementById('prix-km-van').value     = localStorage.getItem('prixKmVan')        || '';
+        document.getElementById('prix-min-van-coef').value = localStorage.getItem('prixMinVanCoef') || '';
+        document.getElementById('cap-pax').value         = localStorage.getItem('capPax')           || '';
+        document.getElementById('cap-bags').value        = localStorage.getItem('capBags')          || '';
+        document.getElementById('default-vehicle').value = localStorage.getItem('defaultVehicle')   || 'eco';
+
+        document.getElementById('night-start').value     = localStorage.getItem('nightStart')       || '21:00';
+        document.getElementById('night-end').value       = localStorage.getItem('nightEnd')         || '07:00';
+        document.getElementById('night-percent').value   = localStorage.getItem('nightPercent')     || '0';
+        document.getElementById('dist-threshold').value  = localStorage.getItem('distThresholdKm')  || '35';
+        document.getElementById('dist-percent').value    = localStorage.getItem('distPercent')      || '0';
+      
+
+        // Charger la liste des codes promo (serveur)
+        if (typeof promoRefresh === 'function') { promoRefresh(); }
+} else {
+        alert("Mot de passe incorrect");
+      }
+    }
+
+    function saveSettings() {
+      localStorage.setItem("prixMinEco",       document.getElementById("prix-min").value);
+      localStorage.setItem("prixKmEco",        document.getElementById("prix-km-eco").value);
+      localStorage.setItem("prixMinEcoCoef",   document.getElementById("prix-min-eco").value);
+      localStorage.setItem("prixMinVan",       document.getElementById("prix-min-van").value);
+      localStorage.setItem("prixKmVan",        document.getElementById("prix-km-van").value);
+      localStorage.setItem("prixMinVanCoef",   document.getElementById("prix-min-van-coef").value);
+      localStorage.setItem("capPax",           document.getElementById("cap-pax").value);
+      localStorage.setItem("capBags",          document.getElementById("cap-bags").value);
+      localStorage.setItem("defaultVehicle",   document.getElementById("default-vehicle").value);
+
+      localStorage.setItem("nightStart",       document.getElementById("night-start").value);
+      localStorage.setItem("nightEnd",         document.getElementById("night-end").value);
+      localStorage.setItem("nightPercent",     document.getElementById("night-percent").value);
+      localStorage.setItem("distThresholdKm",  document.getElementById("dist-threshold").value);
+      localStorage.setItem("distPercent",      document.getElementById("dist-percent").value);
+
+      alert("Paramètres enregistrés !");
+    }
+
+    function resetSettings() {
+      ["prixMinEco","prixKmEco","prixMinEcoCoef","prixMinVan","prixKmVan","prixMinVanCoef",
+       "capPax","capBags","defaultVehicle","nightStart","nightEnd","nightPercent",
+       "distThresholdKm","distPercent"].forEach(k => localStorage.removeItem(k));
+      alert("Paramètres réinitialisés.");
+    }
+  </script>
+
+<!-- Boutons Flottants WhatsApp & Téléphone -->
+<a href="https://wa.me/33749872912?text=Bonjour%20HAKNPRESTIGE%2C%20j'aimerais%20réserver%20un%20chauffeur%20privé" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<a href="tel:+33749872912" class="floating-phone" aria-label="Appelez-nous au 07 49 87 29 12">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+  </svg>
+</a>
+
+  <script src="/menu.js"></script>
+
+<script>
+
+    // ==========================
+    // Promo codes (Netlify Functions)
+    // ==========================
+    function promoNormalize(code){
+      return String(code || '').trim().toUpperCase().replace(/[^A-Z0-9_-]/g,'').slice(0,32);
+    }
+
+function promoNotice(text, isError){
+      const el = document.getElementById('promo-msg');
+      if (!el) return;
+      el.textContent = text || '';
+      el.style.color = isError ? '#b71c1c' : '#2e7d32';
+    }
+
+
+    async function promoApi(path, method, body){
+      const pwd = document.getElementById("password")?.value || "";
+      const headers = { "content-type": "application/json; charset=utf-8", "x-admin-key": pwd };
+      const opts = { method, headers, cache: "no-store" };
+      if (body) opts.body = JSON.stringify(body);
+      const res = await fetch(path, opts);
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error || json.message || (`HTTP ${res.status}`));
+      return json;
+    }
+
+    function promoRow(item){
+      const code = item.code;
+      const percent = item.percent;
+      const active = item.active !== false;
+
+      const shareUrl = `${location.origin}/?promo=${encodeURIComponent(code)}`;
+
+      return `
+        <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 12px;border:1px solid #e6e6e6;border-radius:10px;margin:8px 0;background:#fff;">
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <div style="font-weight:700;letter-spacing:.02em;">${code} <span style="font-weight:600;color:#666;">- ${percent}%</span></div>
+            <div style="font-size:13px;color:${active ? "#2e7d32" : "#b71c1c"};">${active ? "Actif" : "Désactivé"}</div>
+            <div style="font-size:12px;color:#777;word-break:break-all;">Lien : ${shareUrl}</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <button class="secondary" type="button" onclick="promoCopy('${code}')">Copier lien</button>
+            <button class="secondary" type="button" onclick="promoToggle('${code}', ${active ? "false" : "true"}, ${percent})">${active ? "Désactiver" : "Activer"}</button>
+            <button class="secondary" type="button" onclick="promoDelete('${code}')">Supprimer</button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function promoRefresh(){
+      try{
+        const data = await promoApi('/.netlify/functions/promo-admin', 'GET');
+        const list = (data.codes || []);
+        const box = document.getElementById('promo-list');
+        if (!box) return;
+        if (!list.length){
+          box.innerHTML = '<div style="color:#777;font-size:14px;">Aucun code promo pour le moment.</div>';
+          return;
+        }
+        box.innerHTML = list.map(promoRow).join('');
+      }catch(e){
+        promoNotice("Impossible de charger la liste des codes promo (mot de passe/ADMIN_CODE ou Functions).", true);
+        alert("Impossible de charger la liste des codes promo. Vérifiez votre mot de passe et la variable Netlify ADMIN_CODE.");
+      }
+    }
+
+    async function promoUpsert(){
+      const codeEl = document.getElementById('promo-code');
+      const pctEl  = document.getElementById('promo-percent');
+      const actEl  = document.getElementById('promo-active');
+      const code = promoNormalize(codeEl?.value || "");
+      const percent = Number(pctEl?.value || 0);
+      const active = (actEl?.value !== "false");
+
+      if (!code || !percent){
+        alert("Veuillez saisir un code promo et un pourcentage.");
+        return;
+      }
+      try{
+        promoNotice('Enregistrement du code…', false);
+        await promoApi('/.netlify/functions/promo-admin', 'POST', { code, percent, active });
+        if (codeEl) codeEl.value = code;
+        await promoRefresh();
+        promoNotice('Code promo enregistré.', false);
+        alert("Code promo enregistré.");
+      }catch(e){
+        promoNotice('Erreur : ' + (e && e.message ? e.message : 'enregistrement impossible'), true);
+        alert("Erreur lors de l'enregistrement du code promo.");
+      }
+    }
+
+    async function promoDelete(code){
+      if (!confirm("Supprimer le code " + code + " ?")) return;
+      try{
+        await promoApi('/.netlify/functions/promo-admin', 'POST', { action:'delete', code });
+        await promoRefresh();
+      }catch(e){
+        alert("Erreur : " + (e && e.message ? e.message : "suppression impossible"));
+      }
+    }
+
+    async function promoToggle(code, active, percent){
+      try{
+        promoNotice('Enregistrement du code…', false);
+        await promoApi('/.netlify/functions/promo-admin', 'POST', { code, percent, active });
+        await promoRefresh();
+      }catch(e){
+        alert("Erreur : " + (e && e.message ? e.message : "mise à jour impossible"));
+      }
+    }
+
+    async function promoCopy(code){
+      const url = `${location.origin}/?promo=${encodeURIComponent(code)}`;
+      try{
+        await navigator.clipboard.writeText(url);
+        alert("Lien copié : " + url);
+      }catch(_){
+        prompt("Copiez le lien :", url);
+      }
+    }
+
+</script>
+</body>
+</html>
+

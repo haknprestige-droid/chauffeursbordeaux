@@ -1,0 +1,50 @@
+# Headers optimisés pour Netlify - HAKNPRESTIGE
+
+/*
+  # Sécurité
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Cache des ressources statiques
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.html
+  # Pas de cache pour les pages HTML
+  Cache-Control: public, max-age=0, must-revalidate
+  
+/*.css
+  # Cache CSS pour 1 an
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.js
+  # Cache JavaScript pour 1 an  
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.jpg
+  # Cache images pour 1 an
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.png
+  # Cache images PNG pour 1 an
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.webp
+  # Cache images WEBP pour 1 an
+  Cache-Control: public, max-age=31536000, immutable
+
+
+# IMPORTANT : ces fichiers changent souvent.
+# On évite le cache "immutable" pour que les corrections soient prises en compte.
+/script.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/config.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/menu.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/style.css
+  Cache-Control: public, max-age=0, must-revalidate

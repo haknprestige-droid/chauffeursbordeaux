@@ -1,0 +1,34 @@
+# HAKNPRESTIGE - Netlify redirects
+/a-propos /a-propos/ 301
+/contact /contact/ 301
+/reserver-en-ligne /demande-de-devis/ 301
+/demande-de-devis /demande-de-devis/ 301
+/services /services/ 301
+/forfaits /forfaits/ 301
+/vtc-bordeaux /vtc-bordeaux/ 301
+/taxi-alternatif-bordeaux /taxi-alternatif-bordeaux/ 301
+/blog /blog/ 301
+/r-servez-en-ligne /demande-de-devis/ 301
+/r%C3%A9servez-en-ligne /demande-de-devis/ 301
+/r%C3%A9servez-en-ligne/ /demande-de-devis/ 301
+/a-propos-de-nous.html /a-propos/ 301
+/contact.html /contact/ 301
+
+# Blog - normalisation URLs (évite 404 Google Search Console)
+/blog/chauffeur-mariage-bordeaux.html /blog/chauffeur-mariage-bordeaux/ 301
+/blogchauffeur-mariage-bordeaux /blog/chauffeur-mariage-bordeaux/ 301
+/blog/mise-a-disposition-chauffeur-vip-bordeaux.html /blog/mise-a-disposition-chauffeur-vip-bordeaux/ 301
+/blogmise-a-disposition-chauffeur-vip-bordeaux /blog/mise-a-disposition-chauffeur-vip-bordeaux/ 301
+/blog/navette-gare-saint-jean-bordeaux.html /blog/navette-gare-saint-jean-bordeaux/ 301
+/blognavette-gare-saint-jean-bordeaux /blog/navette-gare-saint-jean-bordeaux/ 301
+/blog/tarifs-taxi-vtc-bordeaux.html /blog/tarifs-taxi-vtc-bordeaux/ 301
+/blogtarifs-taxi-vtc-bordeaux /blog/tarifs-taxi-vtc-bordeaux/ 301
+/blog/taxi-ou-vtc-bordeaux.html /blog/taxi-ou-vtc-bordeaux/ 301
+/blogtaxi-ou-vtc-bordeaux /blog/taxi-ou-vtc-bordeaux/ 301
+/blog/trajets-longue-distance-bordeaux.html /blog/trajets-longue-distance-bordeaux/ 301
+/blogtrajets-longue-distance-bordeaux /blog/trajets-longue-distance-bordeaux/ 301
+/blog/transfert-aeroport-bordeaux.html /blog/transfert-aeroport-bordeaux/ 301
+/blogtransfert-aeroport-bordeaux /blog/transfert-aeroport-bordeaux/ 301
+/blog/wine-tour-bordeaux-chauffeur.html /blog/wine-tour-bordeaux-chauffeur/ 301
+/blogwine-tour-bordeaux-chauffeur /blog/wine-tour-bordeaux-chauffeur/ 301
+/service-page/transfert-aeroport-de-merignac /service-page/transfert-aeroport-de-merignac/ 301

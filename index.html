@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Chauffeur Taxi & VTC Bordeaux 24/7 | Prix Fixe | HAKNPRESTIGE</title>
+<link href="/style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Ads tag -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-10852696365"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}  
+    gtag('js', new Date());
+    gtag('config', 'AW-10852696365');
+  </script>
+<style>
+    /* Styles embarqués pour la page */
+    textarea.autosize { overflow: hidden; resize: none; }
+    .error-message { color: #e74c3c; font-size: 0.9em; margin-top: 0.2em; }
+    #confirmation-message { background: #2ecc71; color: #fff; padding: 1em; border-radius: 4px; margin: 1em 0; }
+    .service-advantages, .vehicle-advantages { list-style: disc; margin: 0.5em 0 1em 1.5em; }
+    .service-tarif, .vehicle-tarif { font-weight: bold; margin-bottom: 1em; }
+    #map { width: 100%; height: 400px; margin-top: 20px; }
+
+    /* ✅ Bandeau titre sous l'image - DESIGN AMÉLIORÉ */
+    .intro-bandeau {
+      padding: 25px 20px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .intro-bandeau__box {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 22px 20px;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.10);
+      border: 2px solid rgba(215, 184, 106, 0.15);
+    }
+    .intro-bandeau__title {
+      margin: 0;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+      font-size: clamp(20px, 3.5vw, 34px);
+      color: #1a1a1a;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .intro-bandeau__title span {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: clamp(16px, 3vw, 28px);
+      font-weight: 600;
+      color: #444;
+    }
+    @media (max-width: 480px) {
+      .intro-bandeau { padding: 18px 14px; }
+      .intro-bandeau__box { padding: 16px 14px; border-radius: 12px; }
+    }
+  </style>
+<style>
+    #distance, #estimation { display: none !important; }
+  </style>
+<meta content="Service de Chauffeur Taxi & VTC Bordeaux depuis 11 ans. Prix fixe garanti, véhicules Mercedes/Lexus, transferts aéroport/gare 24/7. Réservation ☎ 07 49 87 29 12" name="description"/>
+<link href="https://www.chauffeursbordeaux.com/" rel="canonical"/>
+
+<!-- ✅ OPTIMISATION PERFORMANCE : Préchargement de l'image hero (LCP) -->
+<link rel="preload" as="image" href="/img/hero.png" fetchpriority="high">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Retour à l'accueil">
+      <img src="/img/logo.png" alt="HAKNPRESTIGE" class="brand-logo" width="200" height="60">
+    </a>
+
+    <div class="header-center" aria-label="Slogan">
+      <div class="tagline">LAISSEZ-VOUS CONDUIRE</div>
+      <div class="subline">TAXI &amp; VTC</div>
+    </div>
+
+    <div class="header-actions">
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="/">Accueil</a>
+        <a href="/vtc-bordeaux/">VTC Bordeaux</a>
+        <a href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+        <a href="/services/">Services</a>
+        <a href="/forfaits/">Forfaits</a>
+        <a href="/demande-de-devis/">Devis</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+        <a href="/partenaires/">Partenaires</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <nav class="mobile-drawer" id="mobileMenu" aria-label="Menu principal">
+    <div class="drawer-top">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" type="button" aria-label="Fermer le menu">×</button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a class="drawer-link" href="/">Accueil</a>
+      <a class="drawer-link" href="/vtc-bordeaux/">VTC Bordeaux</a>
+      <a class="drawer-link" href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+      <a class="drawer-link" href="/services/">Services</a>
+      <a class="drawer-link" href="/forfaits/">Forfaits</a>
+      <a class="drawer-link" href="/demande-de-devis/">Demande de devis</a>
+      <a class="drawer-link" href="/a-propos/">À propos</a>
+      <a class="drawer-link" href="/contact/">Contact</a>
+      <a class="drawer-link" href="/partenaires/">Partenaires</a>
+      <a class="drawer-link" href="/blog/">Blog</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Bannière -->
+<section class="hero">
+<!-- ✅ CORRIGÉ : hero.png (pas .jpg) - Dimensions: 1898x499 - Pas de lazy loading (LCP critical) -->
+<img alt="Bordeaux" class="hero-img" src="/img/hero.png" width="1898" height="499" fetchpriority="high"/>
+<div class="hero-text">
+<h1 style="font-size: 1.4rem; font-weight: 700; line-height: 1.3;">Chauffeur TAXI & VTC à Bordeaux – Prix fixe & service premium</h1>
+<p>Réservation 24h/24 – Gare, Aéroport, Business, Événements</p>
+<p>Besoin d'une prise en charge rapide ? Alternative taxi (VTC) au 07 49 87 29 12</p>
+</div>
+</section>
+<!-- ✅ NOUVEAU : Texte demandé sous l'image et au-dessus de "Demande de Tarif" -->
+<section aria-label="Présentation" class="intro-bandeau">
+<div class="intro-bandeau__box">
+<h2 class="intro-bandeau__title">TAXI &amp; VTC BORDEAUX<br/><span>Prix fixe connu à l'avance • Réservation immédiate ou planifiée</span></h2>
+</div>
+</section>
+<!-- Formulaire & Carte -->
+<section id="form-section">
+<h2 class="reservation-title">Obtenir mon prix fixe</h2>
+<div class="reservation-container">
+<div class="form-column">
+<div aria-live="polite" id="form-feedback"></div>
+<form id="reservation-form" novalidate="">
+<input name="prenom" placeholder="Prénom" required="" type="text"/>
+<div class="error-message"></div>
+<input name="nom" placeholder="Nom" required="" type="text"/>
+<div class="error-message"></div>
+<input name="telephone" placeholder="Téléphone" required="" type="tel"/>
+<div class="error-message"></div>
+<input name="email" placeholder="Adresse e-mail" required="" type="email"/>
+<div class="error-message"></div>
+<input id="promo_code" name="promo_code" placeholder="Code promo (optionnel)" type="text"/>
+<div class="error-message"></div>
+<div id="promo_status" class="promo-status" aria-live="polite"></div>
+
+<input id="pickup" name="pickup" placeholder="Lieu de prise en charge" required="" type="text"/>
+<div class="error-message"></div>
+<input id="dropoff" name="dropoff" placeholder="Destination" required="" type="text"/>
+<div class="error-message"></div>
+<input id="datetime" name="datetime" required="" type="datetime-local"/>
+<div class="error-message"></div>
+<input name="valise" placeholder="Nombre de valises" required="" type="number"/>
+<div class="error-message"></div>
+<input name="passager" placeholder="Nombre de passagers" required="" type="number"/>
+<div class="error-message"></div>
+<select name="vehicle" required="">
+<option value="">Sélectionner un véhicule</option>
+<option value="eco">Berline premium (max 3 pax)</option>
+<option value="van">Van (max 7 pax)</option>
+</select>
+<div class="error-message"></div>
+<textarea class="autosize" name="comment" placeholder="Commentaires / Besoins particuliers (optionnel)"></textarea>
+<div class="error-message"></div>
+<!-- Paiement : uniquement à bord (caché) -->
+<input name="paiement" type="hidden" value="bord"/>
+<!-- Champs techniques (remplis par script.js juste avant l'envoi) -->
+<input id="price" name="price" type="hidden" value=""/>
+<input id="price_base" name="price_base" type="hidden" value=""/>
+<input id="promo_percent" name="promo_percent" type="hidden" value=""/>
+<input id="formatted_datetime" name="formatted_datetime" type="hidden" value=""/>
+<input id="date_only" name="date" type="hidden" value=""/>
+<input id="time_only" name="heure" type="hidden" value=""/>
+<button type="submit">Obtenir mon prix fixe</button>
+</form>
+<p id="distance"></p>
+<p id="estimation"></p>
+</div>
+<div class="map-column">
+<div id="map"></div>
+</div>
+</div>
+</section><section aria-label="Chauffeur VTC Bordeaux" class="seo-section"><div class="container seo-container"><h2>Chauffeur TAXI &amp; VTC à Bordeaux : prix fixe, confort et ponctualité</h2><p>HAKNPRESTIGE propose un service de chauffeur TAXI & VTC à Bordeaux, pensé pour les clients qui veulent un transport fiable, élégant et sans surprise. Le prix est annoncé à l'avance (prix fixe), avec un niveau de confort premium : véhicule propre, conduite souple, discrétion et ponctualité. Nous réalisons vos transferts vers la Gare Saint-Jean, l'Aéroport de Bordeaux–Mérignac, les hôtels, événements et rendez-vous professionnels, ainsi que les trajets longue distance.</p><h3>Alternative taxi à Bordeaux : réservation rapide, même au dernier moment</h3><p>Si vous cherchez un "taxi à Bordeaux" pour partir vite, notre service VTC peut être une excellente alternative : prise en charge sur réservation, confirmation rapide selon disponibilité, et tarif transparent. Vous pouvez demander un prix fixe via le formulaire ou appeler directement pour une prise en charge rapide. Idéal pour les départs urgents, les retours tardifs, ou quand vous souhaitez éviter les variations de tarifs.</p><h3>Zones desservies</h3><p>Bordeaux centre, Mérignac, Pessac, Talence, Bègles, Le Bouscat, Bruges, Eysines, Floirac, Cenon, Lormont, et l'ensemble de la Gironde (Arcachon, Cap Ferret, Saint-Émilion…).</p><h3>Questions fréquentes</h3><div class="faq"><details><summary>Le prix est-il connu avant la course ?</summary><p>Oui. Vous recevez un prix fixe avant validation, basé sur votre trajet et vos options.</p></details><details><summary>Êtes-vous un taxi ?</summary><p>Non. Nous sommes un service VTC. Pour les besoins "type taxi", nous proposons une alternative sur réservation, avec prix annoncé à l'avance.</p></details><details><summary>Pouvez-vous venir à la gare ou à l'aéroport ?</summary><p>Oui, transferts Gare Saint-Jean et Aéroport Bordeaux–Mérignac, avec ponctualité et suivi (selon prestation).</p></details><details><summary>Puis-je réserver pour une mise à disposition ?</summary><p>Oui, mise à disposition à l'heure (business, mariage, événements, visites).</p></details><details><summary>Quels moyens de contact ?</summary><p>Formulaire de demande de prix fixe, téléphone et WhatsApp au 07 49 87 29 12.</p></details></div></div></section>
+<!-- Nos Services -->
+<section id="services">
+<h2>Nos Services</h2>
+<div class="cards">
+<div class="card">
+<img alt="Transport VIP" src="/img/service1.jpg" loading="lazy" width="400" height="300"/>
+<h3>Transport VIP</h3>
+<ul class="service-advantages">
+<li>Suivi de vol en temps réel</li>
+<li>Message d'attente à votre arrivée via WhatsApp</li>
+<li>Wi-Fi à bord</li>
+<li>Espace bagages spacieux</li>
+<li>Service sur mesure à votre demande</li>
+</ul>
+<p class="service-tarif">Tarif fixe connu à l'avance, calculé lors de la réservation.</p>
+</div>
+<div class="card">
+<!-- ✅ LAZY LOADING pour images below-the-fold -->
+<img alt="Navette aéroport" src="/img/service2.jpg" loading="lazy" width="400" height="300"/>
+<h3>Navette aéroport</h3>
+<ul class="service-advantages">
+<li>Suivi de vol et ajustement horaire automatique</li>
+<li>Message d'attente personnalisé via WhatsApp</li>
+<li>Sièges confortables et espace bagages optimisé</li>
+<li>Wi-Fi à bord pour rester connecté</li>
+</ul>
+<p class="service-tarif">Tarif fixe connu à l'avance pour chaque trajet.</p>
+</div>
+<div class="card">
+<img alt="Trajets longue distance" src="/img/service3.jpg" loading="lazy" width="400" height="300"/>
+<h3>Trajets longue distance</h3>
+<ul class="service-advantages">
+<li>Confort optimal sur les longues distances</li>
+<li>Breaks planifiés selon vos besoins</li>
+<li>Wi-Fi et boissons à bord</li>
+</ul>
+<p class="service-tarif">Tarif fixe transparent, sans supplément caché.</p>
+</div>
+</div>
+</section>
+<!-- Nos Véhicules -->
+<section id="vehicules">
+<h2>Nos Véhicules</h2>
+<div class="cards">
+<div class="card">
+<img alt="Lexus NX300h" src="/img/vehicule-lexus.jpg" loading="lazy" width="400" height="300"/>
+<h3>Lexus NX300h</h3>
+<ul class="vehicle-advantages">
+<li>Confort premium et insonorisation accrue</li>
+<li>Sièges en cuir haut de gamme</li>
+</ul>
+<p class="vehicle-tarif">Tarif fixe pour la prise en charge aéroport.</p>
+</div>
+<div class="card">
+<img alt="Mercedes GLC Coupé" src="/img/vehicule-glc.jpg" loading="lazy" width="400" height="300"/>
+<h3>Mercedes GLC Coupé</h3>
+<ul class="vehicle-advantages">
+<li>Style élégant et design sportif</li>
+<li>Confort optimal à bord</li>
+<li>Climatisation multi-zone</li>
+</ul>
+<p class="vehicle-tarif">Tarif fixe pour la prise en charge aéroport.</p>
+</div>
+<div class="card">
+<img alt="Mercedes Classe V" src="/img/vehicule-classev.jpg" loading="lazy" width="400" height="300"/>
+<h3>Mercedes Classe V</h3>
+<ul class="vehicle-advantages">
+<li>Spacieux et modulable (jusqu'à 7 passagers)</li>
+<li>Sièges individuels réglables</li>
+<li>Grand espace bagages</li>
+</ul>
+<p class="vehicle-tarif">Tarif fixe pour la prise en charge aéroport.</p>
+</div>
+</div>
+</section>
+<!-- Partenaires -->
+<section class="partenaires">
+<h3>Ils nous font déjà confiance</h3>
+<p class="partenaires-intro">Depuis plusieurs années, de prestigieux établissements et institutions nous font confiance pour leurs déplacements professionnels et événementiels. Parmi nos partenaires fidèles : l'Hôtel Mercure, La Maison des Vignes, Mestrezat Grands Crus (maison de négoce bordelaise), le Conseil Départemental de la Gironde et la Mairie de Bordeaux. Cette confiance renouvelée témoigne de la qualité de nos services et de notre professionnalisme au quotidien.</p>
+<div class="logos">
+<!-- ✅ Logos partenaires : lazy loading aussi -->
+<img alt="Hôtel Mercure" src="/img/logo-mercure.png" loading="lazy" width="150" height="80"/>
+<img alt="Maison des Vignes" src="/img/logo-maison-vignes.png" loading="lazy" width="150" height="80"/>
+<!-- ✅ CORRIGÉ : logo-mestrezat.jpg (pas .png) -->
+<img alt="Mestrezat Grands Crus" src="/img/logo-mestrezat.jpg" loading="lazy" width="150" height="80"/>
+<!-- ✅ CORRIGÉ : logo-gironde.jpg (pas .png) -->
+<img alt="Conseil Départemental de la Gironde" src="/img/logo-gironde.jpg" loading="lazy" width="150" height="80"/>
+<img alt="Mairie de Bordeaux" src="/img/logo-mairie-bordeaux.png" loading="lazy" width="150" height="80"/>
+</div>
+</section>
+<!-- Footer -->
+<footer class="site-footer">
+<div class="footer-content">
+<div class="footer-brand">
+<h2>HAKNPRESTIGE</h2>
+<p>
+          📞 0749872912  |  ✉️ 
+          <a href="mailto:hicham@chauffeursbordeaux.com">hicham@chauffeursbordeaux.com</a>
+</p>
+</div>
+<nav class="footer-nav">
+<a href="index.html">Accueil</a> |
+        <a href="/a-propos/">À propos</a> |
+        <a href="#services">Services</a> |
+        <a href="/contact/">Contact</a>
+</nav>
+<div class="footer-social">
+  <a class="social-btn facebook" href="https://www.facebook.com/share/17gk2HrWwY/" target="_blank" rel="nofollow noopener" aria-label="Facebook HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.62.77-1.62 1.56v1.88h2.76l-.44 2.9h-2.32V22C18.34 21.24 22 17.08 22 12.07z"/>
+    </svg>
+  </a>
+  <a class="social-btn linkedin" href="https://www.linkedin.com/in/haknprestige-taxi-vtc-3a33a237b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="nofollow noopener" aria-label="LinkedIn HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.45 20.45h-3.55v-5.55c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.93v5.64H9.39V9h3.41v1.56h.05c.48-.9 1.66-1.84 3.42-1.84 3.66 0 4.33 2.41 4.33 5.55v6.18zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/>
+    </svg>
+  </a>
+</div>
+<small>© 2025 HAKNPRESTIGE — Tous droits réservés</small>
+</div>
+</footer>
+<!-- Librairies JS -->
+<script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Votre logique -->
+<script defer="" src="/script.js"></script>
+<!-- API Google Maps (charge Places + appelle initMap défini dans script.js) -->
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVxZZycIvmB48KdOj1Mg_NetHtdh6_Nrw&amp;libraries=places&amp;callback=initMap">
+</script>
+<!-- Boutons Flottants -->
+<a class="floating-whatsapp" href="https://wa.me/33749872912?text=Bonjour%20HAKNPRESTIGE" target="_blank">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</a>
+<a class="floating-phone" href="tel:+33749872912">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"></path>
+</svg>
+</a>
+  <script src="/menu.js"></script>
+
+  <!-- Netlify Forms (détection au build) : DEVIS (caché) -->
+  <!-- Utile si des redirections/SPA empêchent Netlify de "voir" la page /demande-de-devis/ au build -->
+  <form name="devis" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="devis" />
+    <p style="display:none;">
+      <label>Ne pas remplir: <input name="bot-field" /></label>
+    </p>
+  </form>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+# Robots.txt optimisé pour HAKNPRESTIGE
+# Site: chauffeursbordeaux.com
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /code_paypal.txt
+Disallow: /code%20paypal.txt
+Disallow: /code paypal.txt
+
+# Sitemap
+Sitemap: https://www.chauffeursbordeaux.com/sitemap.xml
+
+# Crawl-delay (optionnel, pour éviter la surcharge)
+Crawl-delay: 1

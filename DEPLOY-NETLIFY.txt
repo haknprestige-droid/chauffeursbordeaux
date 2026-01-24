@@ -1,0 +1,18 @@
+Déploiement (pour que les codes promo fonctionnent)
+
+IMPORTANT: Les codes promo utilisent des Netlify Functions + stockage (Blobs). 
+=> Un simple "drag & drop" du dossier peut ne PAS publier les functions / dépendances.
+
+Option recommandée (simple) : Déploiement via Git
+1) Mets ce dossier dans un repo GitHub
+2) Netlify > Add new site > Import an existing project
+3) Build command : (vide)  (ou "npm install" si demandé)
+4) Publish directory : .
+5) Dans Netlify > Site settings > Environment variables :
+   - ADMIN_CODE = ton mot de passe admin (le même que celui demandé sur /admin)
+
+Test :
+- Ouvre https://ton-domaine/.netlify/functions/promo-validate?code=TEST
+  -> doit répondre {"valid":false}
+- Va sur /admin, crée HICHAM10 (10%)
+- Sur l'accueil, mets HICHAM10 -> le prix se met à jour avec la réduction
