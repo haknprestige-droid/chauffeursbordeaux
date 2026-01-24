@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demande de devis VTC Bordeaux | HAKNPRESTIGE</title>
+  <meta name="description" content="Obtenez un devis VTC à Bordeaux : mise à disposition, événements, transferts gare/aéroport, prix fixe et réponse rapide."/>
+  <link rel="canonical" href="https://www.chauffeursbordeaux.com/demande-de-devis/"/>
+  <link rel="stylesheet" href="/style.css"/>
+  <style>
+    #map { height: 400px; width: 100%; border-radius: 8px; margin-top: 20px; }
+
+    /* ===== Formulaire devis (design pro) — isolé à cette page ===== */
+    .quote-wrap {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 16px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.08);
+      padding: 20px;
+    }
+    .quote-head {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-bottom: 14px;
+    }
+    .quote-head h2 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    .quote-head p {
+      margin: 0;
+      color: rgba(0,0,0,.7);
+      font-size: .95rem;
+      line-height: 1.35;
+    }
+    form[name="devis-haknprestige"] {
+      display: grid;
+      gap: 12px;
+    }
+    .field {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .field label {
+      font-weight: 700;
+      font-size: .92rem;
+      color: rgba(0,0,0,.8);
+    }
+    .field label .req { color: #b08d2c; }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border: 1px solid rgba(0,0,0,.18);
+      border-radius: 12px;
+      background: #fbfbfb;
+      color: #111;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field textarea { min-height: 110px; resize: vertical; }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      background: #fff;
+      border-color: rgba(176,141,44,.75);
+      box-shadow: 0 0 0 4px rgba(176,141,44,.18);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .quote-actions {
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top: 4px;
+    }
+    .quote-actions button {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(176,141,44,.55);
+      background: #000;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: .5px;
+      cursor: pointer;
+      transition: transform .08s ease, background .2s ease, box-shadow .2s ease;
+      text-transform: uppercase;
+    }
+    .quote-actions button:active { transform: translateY(1px); }
+    .quote-actions button:hover {
+      background: #111;
+      box-shadow: 0 10px 20px rgba(0,0,0,.18);
+    }
+    .quote-footnote {
+      font-size: .86rem;
+      color: rgba(0,0,0,.65);
+      line-height: 1.35;
+    }
+    .quote-footnote strong { color: #000; }
+
+    @media (max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Retour à l'accueil">
+      <img src="/img/logo.png" alt="HAKNPRESTIGE" class="brand-logo" width="200" height="60">
+    </a>
+
+    <div class="header-center" aria-label="Slogan">
+      <div class="tagline">LAISSEZ-VOUS CONDUIRE</div>
+      <div class="subline">TAXI &amp; VTC</div>
+    </div>
+
+    <div class="header-actions">
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="/">Accueil</a>
+        <a href="/vtc-bordeaux/">VTC Bordeaux</a>
+        <a href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+        <a href="/services/">Services</a>
+        <a href="/forfaits/">Forfaits</a>
+        <a href="/demande-de-devis/">Devis</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+        <a href="/partenaires/">Partenaires</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <nav class="mobile-drawer" id="mobileMenu" aria-label="Menu principal">
+    <div class="drawer-top">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" type="button" aria-label="Fermer le menu">×</button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a class="drawer-link" href="/">Accueil</a>
+      <a class="drawer-link" href="/vtc-bordeaux/">VTC Bordeaux</a>
+      <a class="drawer-link" href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+      <a class="drawer-link" href="/services/">Services</a>
+      <a class="drawer-link" href="/forfaits/">Forfaits</a>
+      <a class="drawer-link" href="/demande-de-devis/">Demande de devis</a>
+      <a class="drawer-link" href="/a-propos/">À propos</a>
+      <a class="drawer-link" href="/contact/">Contact</a>
+      <a class="drawer-link" href="/partenaires/">Partenaires</a>
+      <a class="drawer-link" href="/blog/">Blog</a>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+
+<section class="hero" style="padding: 2rem 1rem; text-align: center;">
+  <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Demande de devis chauffeur à Bordeaux</h1>
+  <p>Décrivez votre besoin (événement, mise à disposition, plusieurs étapes, longue distance). Nous vous répondons avec un <strong>devis clair</strong> et un prix fixe.</p>
+</section>
+
+<section id="form-section">
+<h2 class="reservation-title">Obtenir mon devis</h2>
+<div class="reservation-container">
+<div class="form-column">
+
+<!-- FORMULAIRE NETLIFY avec autocomplétion Google -->
+<div class="quote-wrap">
+  <div class="quote-head">
+    <h2>Demande de devis</h2>
+    <p>Prix clair et réponse rapide. Indiquez vos adresses, la date/heure et le type de véhicule.</p>
+  </div>
+
+  <form name="devis-haknprestige" method="POST" data-netlify="true" action="/merci/">
+    <input type="hidden" name="form-name" value="devis-haknprestige"/>
+    <p style="display:none;">
+      <label>Ne pas remplir: <input name="bot-field"/></label>
+    </p>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Prénom <span class="req">*</span></label>
+        <input name="prenom" placeholder="Prénom" required type="text"/>
+      </div>
+      <div class="field">
+        <label>Nom <span class="req">*</span></label>
+        <input name="nom" placeholder="Nom" required type="text"/>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Téléphone <span class="req">*</span></label>
+        <input name="telephone" placeholder="Téléphone" required type="tel"/>
+      </div>
+      <div class="field">
+        <label>Email <span class="req">*</span></label>
+        <input name="email" placeholder="Adresse e-mail" required type="email"/>
+      </div>
+    </div>
+    <div class="field">
+      <label>Code promo (optionnel)</label>
+      <input name="promo_code" placeholder="Ex : ADIL10" type="text"/>
+    </div>
+
+
+    <div class="field">
+      <label>Lieu de prise en charge <span class="req">*</span></label>
+      <input id="depart" name="depart" placeholder="Ex : Gare Saint-Jean, Bordeaux" required type="text"/>
+    </div>
+
+    <div class="field">
+      <label>Destination <span class="req">*</span></label>
+      <input id="destination" name="destination" placeholder="Ex : Aéroport Bordeaux-Mérignac" required type="text"/>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Date &amp; heure <span class="req">*</span></label>
+        <input name="datetime" required type="datetime-local"/>
+      </div>
+      <div class="field">
+        <label>Type de véhicule <span class="req">*</span></label>
+        <select name="vehicule" required>
+          <option value="">Choisir…</option>
+          <option value="Éco (max 3 pax)">Éco (max 3 pax)</option>
+          <option value="Van (max 7 pax)">Van (max 7 pax)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Nombre de valises <span class="req">*</span></label>
+        <input name="valises" placeholder="0" required type="number" min="0"/>
+      </div>
+      <div class="field">
+        <label>Nombre de passagers <span class="req">*</span></label>
+        <input name="passagers" placeholder="1" required type="number" min="1"/>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Commentaires (optionnel)</label>
+      <textarea name="commentaires" placeholder="Ex : siège enfant, plusieurs arrêts, mise à disposition…"></textarea>
+    </div>
+
+    <div class="quote-actions">
+      <button type="submit">Envoyer ma demande</button>
+      <div class="quote-footnote">
+        <strong>Réponse rapide</strong> : nous confirmons votre demande et revenons vers vous avec un devis clair.
+      </div>
+    </div>
+  </form>
+</div>
+
+</div>
+<div class="map-column">
+  <div id="map"></div>
+</div>
+</div>
+</section>
+
+<section>
+  <h2>Conseils pour un devis précis</h2>
+  <ul>
+    <li>Nombre de passagers et bagages</li>
+    <li>Adresse de départ / destination (ou étapes)</li>
+    <li>Date et heure souhaitées</li>
+    <li>Type de prestation : aéroport, gare, événement, longue distance</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 HAKNPRESTIGE — Chauffeur VTC / Taxi alternatif à Bordeaux — 07 49 87 29 12</p>
+
+<div class="footer-social">
+  <a class="social-btn facebook" href="https://www.facebook.com/share/17gk2HrWwY/" target="_blank" rel="nofollow noopener" aria-label="Facebook HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.62.77-1.62 1.56v1.88h2.76l-.44 2.9h-2.32V22C18.34 21.24 22 17.08 22 12.07z"/>
+    </svg>
+  </a>
+  <a class="social-btn linkedin" href="https://www.linkedin.com/in/haknprestige-taxi-vtc-3a33a237b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="nofollow noopener" aria-label="LinkedIn HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.45 20.45h-3.55v-5.55c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.93v5.64H9.39V9h3.41v1.56h.05c.48-.9 1.66-1.84 3.42-1.84 3.66 0 4.33 2.41 4.33 5.55v6.18zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/>
+    </svg>
+  </a>
+</div>
+</footer>
+
+<!-- Config Google Maps -->
+<script src="/config.js"></script>
+
+<!-- Script SIMPLE pour autocomplétion SEULEMENT -->
+<script>
+// Fonction pour initialiser Google Maps
+function initMap() {
+  if (!window.google || !window.google.maps) {
+    console.warn('Google Maps non disponible');
+    return;
+  }
+
+  // Centre de Bordeaux
+  const bordeaux = { lat: 44.8378, lng: -0.5792 };
+
+  // Créer la carte
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: bordeaux
+  });
+
+  // Ajouter autocomplétion sur les champs d'adresse
+  const inputDepart = document.getElementById('depart');
+  const inputDestination = document.getElementById('destination');
+
+  if (inputDepart && window.google.maps.places) {
+    const autocompleteDepart = new google.maps.places.Autocomplete(inputDepart);
+    autocompleteDepart.bindTo('bounds', map);
+  }
+
+  if (inputDestination && window.google.maps.places) {
+    const autocompleteDestination = new google.maps.places.Autocomplete(inputDestination);
+    autocompleteDestination.bindTo('bounds', map);
+  }
+}
+
+// Charger Google Maps
+(function() {
+  const KEY = (window.GOOGLE_MAPS_API_KEY || '').trim();
+  
+  if (!KEY || KEY.includes('PASTE')) {
+    console.warn('Clé Google Maps manquante dans config.js');
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=' + KEY + '&libraries=places&callback=initMap';
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+})();
+</script>
+
+<!-- Menu mobile -->
+<script src="/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfert Aéroport Bordeaux-Mérignac | Chauffeur VTC HAKNPRESTIGE</title>
+  <meta name="description" content="Transfert aéroport Bordeaux-Mérignac (BOD) : chauffeur premium, prix fixe, suivi de vol, réservation simple en ligne."/>
+  <link rel="canonical" href="https://www.chauffeursbordeaux.com/service-page/transfert-aeroport-de-merignac/"/>
+  <link rel="stylesheet" href="/style.css"/>
+  
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Retour à l'accueil">
+      <img src="/img/logo.png" alt="HAKNPRESTIGE" class="brand-logo" width="200" height="60">
+    </a>
+
+    <div class="header-center" aria-label="Slogan">
+      <div class="tagline">LAISSEZ-VOUS CONDUIRE</div>
+      <div class="subline">TAXI &amp; VTC</div>
+    </div>
+
+    <div class="header-actions">
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="/">Accueil</a>
+        <a href="/vtc-bordeaux/">VTC Bordeaux</a>
+        <a href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+        <a href="/services/">Services</a>
+        <a href="/forfaits/">Forfaits</a>
+        <a href="/demande-de-devis/">Devis</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+        <a href="/partenaires/">Partenaires</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <nav class="mobile-drawer" id="mobileMenu" aria-label="Menu principal">
+    <div class="drawer-top">
+      <span class="drawer-title">Menu</span>
+      <button class="drawer-close" type="button" aria-label="Fermer le menu">×</button>
+    </div>
+
+    <div class="mobile-drawer-links">
+      <a class="drawer-link" href="/">Accueil</a>
+      <a class="drawer-link" href="/vtc-bordeaux/">VTC Bordeaux</a>
+      <a class="drawer-link" href="/taxi-alternatif-bordeaux/">Alternative Taxi</a>
+      <a class="drawer-link" href="/services/">Services</a>
+      <a class="drawer-link" href="/forfaits/">Forfaits</a>
+      <a class="drawer-link" href="/demande-de-devis/">Demande de devis</a>
+      <a class="drawer-link" href="/a-propos/">À propos</a>
+      <a class="drawer-link" href="/contact/">Contact</a>
+      <a class="drawer-link" href="/partenaires/">Partenaires</a>
+      <a class="drawer-link" href="/blog/">Blog</a>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+
+<section class="hero">
+  <h1>Transfert Aéroport Bordeaux-Mérignac (BOD)</h1>
+  <p>Réservez un chauffeur premium pour vos transferts vers/depuis l’aéroport de Bordeaux-Mérignac : <strong>prix fixe</strong>, suivi de vol, confort haut de gamme.</p>
+  <p><a class="btn" href="/demande-de-devis/">Demander un devis</a></p>
+</section>
+
+<section>
+  <h2>Pourquoi choisir HAKNPRESTIGE ?</h2>
+  <ul>
+    <li>Suivi de vol et ajustement de l’horaire si nécessaire</li>
+    <li>Accueil et message d’attente via WhatsApp</li>
+    <li>Véhicules premium, Wi‑Fi à bord, espace bagages</li>
+  </ul>
+</section>
+
+<section id="form-section">
+<h2 class="reservation-title">Obtenir mon prix fixe</h2>
+<div class="reservation-container">
+<div class="form-column">
+<div aria-live="polite" id="form-feedback"></div>
+<form id="reservation-form" novalidate="">
+<input name="prenom" placeholder="Prénom" required="" type="text"/>
+<div class="error-message"></div>
+<input name="nom" placeholder="Nom" required="" type="text"/>
+<div class="error-message"></div>
+<input name="telephone" placeholder="Téléphone" required="" type="tel"/>
+<div class="error-message"></div>
+<input name="email" placeholder="Adresse e-mail" required="" type="email"/>
+<div class="error-message"></div>
+<input id="promo_code" name="promo_code" placeholder="Code promo (optionnel)" type="text"/>
+<div class="error-message"></div>
+<div id="promo_status" class="promo-status" aria-live="polite"></div>
+
+<input id="pickup" name="pickup" placeholder="Lieu de prise en charge" required="" type="text"/>
+<div class="error-message"></div>
+<input id="dropoff" name="dropoff" placeholder="Destination" required="" type="text"/>
+<div class="error-message"></div>
+<input id="datetime" name="datetime" required="" type="datetime-local"/>
+<div class="error-message"></div>
+<input name="valise" placeholder="Nombre de valises" required="" type="number"/>
+<div class="error-message"></div>
+<input name="passager" placeholder="Nombre de passagers" required="" type="number"/>
+<div class="error-message"></div>
+<!-- Éco par défaut -->
+<select name="vehicle" required="">
+<option value="">Type de véhicule</option>
+<option selected="" value="eco">Éco (max 3 pax)</option>
+<option value="van">Van (max 7 pax)</option>
+</select>
+<div class="error-message"></div>
+<textarea class="autosize" name="comment" placeholder="Commentaires / Besoins particuliers (optionnel)"></textarea>
+<div class="error-message"></div>
+<!-- Paiement : uniquement à bord (caché) -->
+<input name="paiement" type="hidden" value="bord"/>
+<!-- Champs techniques (remplis par script.js juste avant l’envoi) -->
+<input id="price" name="price" type="hidden" value=""/>
+<input id="price_base" name="price_base" type="hidden" value=""/>
+<input id="promo_percent" name="promo_percent" type="hidden" value=""/>
+<input id="formatted_datetime" name="formatted_datetime" type="hidden" value=""/>
+<input id="date_only" name="date" type="hidden" value=""/>
+<input id="time_only" name="heure" type="hidden" value=""/>
+<button type="submit">Obtenir mon prix fixe</button>
+</form>
+<p id="distance"></p>
+<p id="estimation"></p>
+</div>
+<div class="map-column">
+<div id="map"></div>
+</div>
+</div>
+</section>
+
+<section>
+  <h2>Infos utiles</h2>
+  <p>Indiquez “Aéroport de Bordeaux-Mérignac” comme prise en charge ou destination. Pour une mise à disposition (business, événements), faites une <a href="/demande-de-devis/">demande de devis</a>.</p>
+  <p>Vous pouvez aussi lire : <a href="/blog/transfert-aeroport-bordeaux/">Transfert aéroport Bordeaux : conseils & organisation</a>.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 HAKNPRESTIGE — Chauffeur VTC / Taxi alternatif à Bordeaux — 07 49 87 29 12</p>
+
+<div class="footer-social">
+  <a class="social-btn facebook" href="https://www.facebook.com/share/17gk2HrWwY/" target="_blank" rel="nofollow noopener" aria-label="Facebook HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07C2 17.08 5.66 21.24 10.44 22v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.62.77-1.62 1.56v1.88h2.76l-.44 2.9h-2.32V22C18.34 21.24 22 17.08 22 12.07z"/>
+    </svg>
+  </a>
+  <a class="social-btn linkedin" href="https://www.linkedin.com/in/haknprestige-taxi-vtc-3a33a237b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="nofollow noopener" aria-label="LinkedIn HAKNPRESTIGE">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.45 20.45h-3.55v-5.55c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.93v5.64H9.39V9h3.41v1.56h.05c.48-.9 1.66-1.84 3.42-1.84 3.66 0 4.33 2.41 4.33 5.55v6.18zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/>
+    </svg>
+  </a>
+</div>
+</footer>
+
+<script src="/config.js?v=4"></script>
+<script src="/script.js?v=4"></script>
+  <script src="/menu.js"></script>
+</body>
+</html>
